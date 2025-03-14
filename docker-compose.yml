@@ -52,19 +52,19 @@ services:
       - source: wpt_locations_ini
         target: /var/www/webpagetest/www/settings/locations.ini
 
-  #### DOCKER WPTAGENT - comment this out to run a standalone agent ####
-  agent:
-    cap_add: #### Allows traffic shapping
-      - NET_ADMIN
-    build:
-      context: .
-      dockerfile: docker/local/Dockerfile-wptagent
-    environment:
-      - SERVER_URL=http://web/work/
-      - LOCATION=Test
-      - KEY=123456789
-    init: true
-  #### ####
+  # #### DOCKER WPTAGENT - comment this out to run a standalone agent ####
+  # agent:
+  #   cap_add: #### Allows traffic shapping
+  #     - NET_ADMIN
+  #   build:
+  #     context: .
+  #     dockerfile: docker/local/Dockerfile-wptagent
+  #   environment:
+  #     - SERVER_URL=http://web/work/
+  #     - LOCATION=Test
+  #     - KEY=123456789
+  #   init: true
+  # #### ####
 
 secrets:
   wpt_settings_ini:
